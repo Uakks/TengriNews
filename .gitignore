@@ -1,0 +1,6 @@
+# created by virtualenv automatically
+.venv
+/data
+/db.sqlite3
+projects_data.json
+.env
