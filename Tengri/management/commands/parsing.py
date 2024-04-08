@@ -37,6 +37,8 @@ def get_data(url):
         "user-agent": "Mozilla / 5.0(Macintosh; Intel Mac OS X 10_15_7) AppleWebKit / 537.36(KHTML, like Gecko) Chrome/123.0.0.0 Safari / 537.36"
     }
 
+    os.mkdir("/Users/uakks/PycharmProjects/TengriNews/data")
+
     iters = 11
 
     for i in range(1, iters):
