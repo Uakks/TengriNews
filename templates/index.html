@@ -12,9 +12,11 @@
         {% csrf_token %}
         <input type="search" class="search-field" placeholder="Search articles" name="searched">
         <div class="tag-filter">Filters:
-        {% for tag in tags %}
-        	<input type="radio" name="filtered" value="{{ tag }}"> {{ tag }}
-        {% endfor %}
+        <select class="filter-selection" name="filtered">
+            {% for tag in tags %}
+                <option value="{{ tag }}" name="filter">{{ tag }}</option>
+            {% endfor %}
+        </select>
         <button type="submit" class="button search-button">Search</button>
     </div>
     </form><br>
@@ -30,7 +32,7 @@
         </label>Алфавиту<br>
         <button type="submit" class="button sort-button">Сортировать</button>
     </form>
-    
+
     <div class="news">
         {% for new in news %}
             <a href="news/{{ new.project_id }}">
@@ -52,7 +54,7 @@
         {% if news.has_previous %}
             <span class="page-item"><a class="page-link" href="?page=1">&laquo; First</a></span>
             <span class="page-item"><a class="page-link" href="?page={{ news.previous_page_number }}">Previous</a></span>
-        {% endif %} 
+        {% endif %}
         {% if news.number != 1 %}
             <span class="page-item"><a class="page-link" href="?page={{ news.previous_page_number }}">{{ news.previous_page_number }}</a></span>
         {% endif %}
