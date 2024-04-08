@@ -8,31 +8,35 @@
 </head>
 <body>
     <h1>Tengri News</h1>
-    <form class="search-form" method="post" action="{% url 'search_articles' %}">
+    <div class="article-forms">
+    <form class="form search-form" method="post" action="{% url 'search_articles' %}">
         {% csrf_token %}
-        <input type="search" class="search-field" placeholder="Search articles" name="searched">
-        <div class="tag-filter">Filters:
+        <label> Поиск статьей: 
+            <input type="search" class="search-field" placeholder="Search articles" name="searched">
+        </label>
+        <div class="tag-filter">Фильтры:
         <select class="filter-selection" name="filtered">
+            <option value="" name="filter"></option>
             {% for tag in tags %}
                 <option value="{{ tag }}" name="filter">{{ tag }}</option>
             {% endfor %}
         </select>
-        <button type="submit" class="button search-button">Search</button>
+        <button type="submit" class="button search-button">Искать</button>
     </div>
     </form><br>
 
-    <form method="post" action="{% url 'sorted_articles' %}">
+    <form class="form sort-form" method="post" action="{% url 'sorted_articles' %}">
         {% csrf_token %}
         Сортировать по:<br>
         <label>
             <input type="radio" checked name="sorting" value="-project_date">
-        </label>Дате публикации<br>
+        Дате публикации<br></label>
         <label>
             <input type="radio" name="sorting" value="title">
-        </label>Алфавиту<br>
+        Алфавиту<br></label>
         <button type="submit" class="button sort-button">Сортировать</button>
     </form>
-
+    </div>
     <div class="news">
         {% for new in news %}
             <a href="news/{{ new.project_id }}">
