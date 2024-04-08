@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Search</title>
+</head>
+<body>
+{% if searched or filtered %}
+    <h1>Tengri News</h1><br>
+    <h2>Результаты поиска: {{ searched }} {% if filtered %}
+    	 - с фильтрами: 
+        {% for filter in filtered %}
+        	<label>{{ filter }} </label>
+        {% endfor %}
+    {% endif %} 
+        <a href="/">Назад</a></h2>
+    <div class="news">
+        {% for article in articles %}
+            <a href="news/{{ article.project_id }}">
+                <div class="post">
+                    <h2 class="title"> {{ article.title }}</h2>
+                    <div>
+                        <img src="{{ article.project_logo }}" alt="News" class="main-image">
+                    </div>
+                    <time>{{ article.project_date }}</time>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+    
+{% else %}
+    <h1>You forgot to search article</h1>
+    <h2><a href="/">Назад</a></h2>
+{% endif %} 
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+{#    <link rel="stylesheet" href="{% static 'style.css' %}">#}
+    <link rel="stylesheet" href="{% static 'news-style.css' %}">
+    <title>Tengri News - {{ pk.project_id }}</title>
+</head>
+<body>
+    <h1>{{ pk.title }}</h1>
+    <div class="news">
+        <time>Дата публикации статьи: {{ pk.project_date }}</time><br><br>
+    
+        {% if authors %}
+            <b>Авторы статьи:</b>
+        {% endif %}
+        {% for author in authors %}
+            <label>{{ author }}. </label>
+        {% endfor %}<br><br>
+    
+        <div class="post">
+            <img src="{{ pk.project_logo }}" alt="News" class="main-image">
+            <label class="main-text">{{ pk.main_text|linebreaksbr }}</label><br><br>
+        </div>
+        <p>
+            <a href="{{ pk.main_link }}">Check the original article</a>
+        </p>
+    </div>
+<br>
+
+</body>
+</html>

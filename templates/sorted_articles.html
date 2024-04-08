@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Sorted by</title>
+</head>
+<body>
+<h1>Отсортировано по: {% if order == '-project_date' %}
+	дате публикации {% else %} алфавитному порядку
+{% endif %}</h1>
+    <div class="news">
+        {% for new in news %}
+            <a href="news/{{ new.project_id }}">
+                <div class="post">
+                    <h2 class="title"> {{ new.title }}</h2>
+                    <div>
+                        <img src="{{ new.project_logo }}" alt="News" class="main-image">
+                    </div>
+                    <time>{{ new.project_date }}</time>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+</body>
+</html>

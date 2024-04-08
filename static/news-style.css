@@ -1,0 +1,27 @@
+html {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 20px;
+    background: rgba(232,255,233,0.96);
+}
+
+h1 {
+    border-radius: 25px;
+    text-align: center;
+    margin: 0 0 20px 0;
+    font-size: 56px;
+    color: rgba(24,24,22,0.96);
+    background: rgba(124, 241, 112, 0.96);
+    padding: 30px 0;
+}
+
+.main-image {
+    width: 50%;
+}
+
+.main-text {
+    font-size: 20px;
+}

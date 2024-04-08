@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Tengri News</title>
+</head>
+<body>
+    <h1>Tengri News</h1>
+    <form class="search-form" method="post" action="{% url 'search_articles' %}">
+        {% csrf_token %}
+        <input type="search" class="search-field" placeholder="Search articles" name="searched">
+        <div class="tag-filter">Filters:
+        {% for tag in tags %}
+        	<input type="radio" name="filtered" value="{{ tag }}"> {{ tag }}
+        {% endfor %}
+        <button type="submit" class="button search-button">Search</button>
+    </div>
+    </form><br>
+
+    <form method="post" action="{% url 'sorted_articles' %}">
+        {% csrf_token %}
+        Сортировать по:<br>
+        <label>
+            <input type="radio" checked name="sorting" value="-project_date">
+        </label>Дате публикации<br>
+        <label>
+            <input type="radio" name="sorting" value="title">
+        </label>Алфавиту<br>
+        <button type="submit" class="button sort-button">Сортировать</button>
+    </form>
+    
+    <div class="news">
+        {% for new in news %}
+            <a href="news/{{ new.project_id }}">
+                <div class="post">
+                    <h2 class="title"> {{ new.title }}</h2>
+                    <div>
+                        <img src="{{ new.project_logo }}" alt="News" class="main-image">
+                    </div>
+                    <time>{{ new.project_date }}</time>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+<br>
+
+
+<nav aria-label="Page navigation example">
+    <div class="pagination">
+        {% if news.has_previous %}
+            <span class="page-item"><a class="page-link" href="?page=1">&laquo; First</a></span>
+            <span class="page-item"><a class="page-link" href="?page={{ news.previous_page_number }}">Previous</a></span>
+        {% endif %} 
+        {% if news.number != 1 %}
+            <span class="page-item"><a class="page-link" href="?page={{ news.previous_page_number }}">{{ news.previous_page_number }}</a></span>
+        {% endif %}
+        <span class="page-item"><a class="page-link" href="?page={{ news.number }}"><b>{{ news.number }}</b></a></span>
+        {% if news.number != news.paginator.num_pages %}
+            <span class="page-item"><a class="page-link" href="?page={{ news.next_page_number }}">{{ news.next_page_number }}</a></span>
+        {% endif %}
+        {% if news.has_next %}
+            <span class="page-item"><a class="page-link" href="?page={{ news.next_page_number }}">Next</a></span>
+            <span class="page-item"><a class="page-link" href="?page={{ news.paginator.num_pages }}">Last &raquo;</a></span>
+        {% endif %}
+    </div>
+</nav>
+</body>
+</html>
