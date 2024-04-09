@@ -12,7 +12,7 @@
     <form class="form search-form" method="post" action="{% url 'search_articles' %}">
         {% csrf_token %}
         <label> Поиск статьей: 
-            <input type="search" class="search-field" placeholder="Search articles" name="searched">
+            <input type="search" class="search-field" placeholder="Введите название статьи" name="searched">
         </label><br>
         <div class="tag-filter">Фильтры:
         <select class="filter-selection" name="filtered">
@@ -45,7 +45,7 @@
                     <div>
                         <img src="{{ new.project_logo }}" alt="News" class="main-image">
                     </div>
-                    <time>{{ new.project_date }}</time>
+                    <time class="post-time">{{ new.project_date }}</time>
                 </div>
             </a>
         {% endfor %}
