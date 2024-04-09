@@ -12,6 +12,9 @@ RUN pip install -r requirements.txt
 # Copy the rest of the application code into the container at /code
 COPY . /code/
 
+# Run migrations
+RUN python manage.py migrate
+
 # Expose the port that the app will run on
 EXPOSE 8000
 
