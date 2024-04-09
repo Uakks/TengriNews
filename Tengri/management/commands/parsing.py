@@ -33,8 +33,9 @@ def converter_to_datetime(lst):
 
 
 class Command(BaseCommand):
-    def handle(self):
+    def handle(self, *args, **options):
         pass
+
     def get_data(self, url):
         headers = {
             "user-agent": "Mozilla / 5.0(Macintosh; Intel Mac OS X 10_15_7) AppleWebKit / 537.36(KHTML, like Gecko) Chrome/123.0.0.0 Safari / 537.36"
@@ -172,7 +173,7 @@ class Command(BaseCommand):
                 )
             iters -= 1
             print(iters)
-        with open(f"{abspath}/code/projects_data.json", "a", encoding="utf-8") as file:
+        with open(f"{abspath}/projects_data.json", "a", encoding="utf-8") as file:
             json.dump(projects_data_list, file, ensure_ascii=False, indent=4)
 
 
