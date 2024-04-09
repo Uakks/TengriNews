@@ -10,10 +10,7 @@
 {% if searched or filtered %}
     <h1>Tengri News</h1><br>
     <h2>Результаты поиска: {{ searched }} {% if filtered %}
-    	 - с фильтрами: 
-        {% for filter in filtered %}
-        	<label>{{ filter }} </label>
-        {% endfor %}
+    	 - с фильтрами: <label>{{ filtered }} </label>
     {% endif %} 
         <a href="/">Назад</a></h2>
     <div class="news">
@@ -24,14 +21,14 @@
                     <div>
                         <img src="{{ article.project_logo }}" alt="News" class="main-image">
                     </div>
-                    <time>{{ article.project_date }}</time>
+                    <time class="post-time">{{ article.project_date }}</time>
                 </div>
             </a>
         {% endfor %}
     </div>
     
 {% else %}
-    <h1>You forgot to search article</h1>
+    <h1>Введите имя статьи или фильтр для поиска</h1>
     <h2><a href="/">Назад</a></h2>
 {% endif %} 
 </body>

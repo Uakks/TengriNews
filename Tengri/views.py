@@ -22,15 +22,16 @@ def search_articles(request):
     if request.method == 'POST':
         searched = request.POST.get('searched')
         filters = request.POST.getlist('filtered')
-        if len(filters) >= 1 and searched is not None:
+        print(filters)
+        if len(filters[0]) >= 1 and searched is not None:
             articles = Article.objects.filter(title__icontains=searched, project_tags__icontains=filters[0])
         elif searched is not None:
             articles = Article.objects.filter(title__icontains=searched)
-        elif len(filters) >= 1:
+        elif len(filters[0]) >= 1:
             articles = Article.objects.filter(project_tags__icontains=filters)
         else:
             articles = Article.objects.all()
-        return render(request, 'search_articles.html', {'filtered': filters, 'searched': searched, 'articles': articles})
+        return render(request, 'search_articles.html', {'filtered': filters[0], 'searched': searched, 'articles': articles})
     else:
         return render(request, 'search_articles.html', {})
 
