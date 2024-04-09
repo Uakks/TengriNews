@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-32fts$#(#fif1yul(zr6b9h89^=xms(va(cme+j6532w_u92qx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['tengrinews.onrender.com']
 
 
 # Application definition
