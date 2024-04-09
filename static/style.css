@@ -38,7 +38,9 @@ h1 {
     border-radius: 5px;
 }
 
-
+.search-field {
+    width: 200px;
+}
 
 .sort-form {
     /*margin-right: 50%;*/
@@ -82,12 +84,9 @@ h1 {
     width: 100%;
 }
 
-.main-text{
-
-}
-
-.test {
-    color: red;
+.post-time {
+    font-weight: bold;
+    color: #a41515;
 }
 
 nav {
