@@ -1,4 +1,6 @@
 import json
+import os
+
 from django.core.management.base import BaseCommand
 from Tengri.models import Article
 
@@ -7,7 +9,9 @@ class Command(BaseCommand):
     help = 'Import articles from json file into database'
 
     def handle(self, *args, **kwargs):
-        with open('/Users/uakks/PycharmProjects/TengriNews/projects_data.json', 'r', encoding='utf8') as file:
+        cwd = os.getcwd()
+        abspath = os.path.abspath(os.path.join(cwd))
+        with open(f'{abspath}/projects_data.json', 'r', encoding='utf8') as file:
             data = json.load(file)
 
             for article in data:

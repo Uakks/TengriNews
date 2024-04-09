@@ -37,15 +37,17 @@ def get_data(url):
         "user-agent": "Mozilla / 5.0(Macintosh; Intel Mac OS X 10_15_7) AppleWebKit / 537.36(KHTML, like Gecko) Chrome/123.0.0.0 Safari / 537.36"
     }
 
-    os.mkdir("/Users/uakks/PycharmProjects/TengriNews/data")
+    cwd = os.getcwd()
+    abspath = os.path.abspath(os.path.join(cwd))
+    os.mkdir(f"{abspath}/data")
 
-    iters = 11
+    iters = 3
 
     for i in range(1, iters):
         req = requests.get(url + f"page/{i}", headers)
         print(url + f"page/{i}")
 
-        folder_name = f"/Users/uakks/PycharmProjects/TengriNews/data/data_{i}"
+        folder_name = f"{abspath}/data/data_{i}"
 
         if not os.path.exists(folder_name):
             os.mkdir(folder_name)
@@ -167,7 +169,7 @@ def get_data(url):
             )
         iters -= 1
         print(iters)
-    with open("/Users/uakks/PycharmProjects/TengriNews/projects_data.json", "a", encoding="utf-8") as file:
+    with open(f"{abspath}/projects_data.json", "a", encoding="utf-8") as file:
         json.dump(projects_data_list, file, ensure_ascii=False, indent=4)
 
 
