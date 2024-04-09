@@ -45,7 +45,7 @@ class Command(BaseCommand):
         abspath = os.path.abspath(os.path.join(cwd))
         os.mkdir(f"{abspath}/data")
 
-        iters = 2
+        iters = 11
 
         for i in range(1, iters):
             req = requests.get(url + f"page/{i}", headers)
