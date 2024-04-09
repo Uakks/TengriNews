@@ -1,11 +1,12 @@
 html {
     width: 100%;
     box-sizing: border-box;
+    font-family: "Times New Roman", sans-serif;
 }
 
 body {
     margin: 20px;
-    background: rgba(232,255,233,0.96);
+    background: #def2f1;
 }
 
 h1 {
@@ -14,14 +15,44 @@ h1 {
     margin: 0 0 20px 0;
     font-size: 56px;
     color: rgba(24,24,22,0.96);
-    background: rgba(124, 241, 112, 0.96);
+    background: #3aafa9;
     padding: 30px 0;
+    border: black 3px solid;
+}
+
+.general-info {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px 0;
+    font-size: 24px;
+    height: fit-content;
+}
+
+time {
+    color: red;
+    height: fit-content;
+}
+
+.authors-label {
+    color: #003e3e;
+    height: fit-content;
+}
+
+.post {
+    align-items: center;
+    margin: 0 10%;
 }
 
 .main-image {
-    width: 50%;
+    width: 100%;
 }
 
 .main-text {
     font-size: 20px;
+    margin-right: 10%;
+}
+
+.main-link {
+    text-decoration: none;
+    font-size: 32px;
 }

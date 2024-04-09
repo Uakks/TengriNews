@@ -10,22 +10,24 @@
 <body>
     <h1>{{ pk.title }}</h1>
     <div class="news">
-        <time>Дата публикации статьи: {{ pk.project_date }}</time><br><br>
-    
+    <div class="general-info">
+        <time><b>Дата публикации статьи: {{ pk.project_date }}</b></time><br><br>
+        
+        <div class="authors-label">
         {% if authors %}
             <b>Авторы статьи:</b>
         {% endif %}
         {% for author in authors %}
             <label>{{ author }}. </label>
-        {% endfor %}<br><br>
-    
+        {% endfor %}
+        </div>
+    </div>
         <div class="post">
             <img src="{{ pk.project_logo }}" alt="News" class="main-image">
-            <label class="main-text">{{ pk.main_text|linebreaksbr }}</label><br><br>
+            <p class="main-text">{{ pk.main_text|linebreaksbr }}</p><br><br>
+            <a class="main-link" href="{{ pk.main_link }}">Посмотреть оригинал статьи</a>
         </div>
-        <p>
-            <a href="{{ pk.main_link }}">Check the original article</a>
-        </p>
+        
     </div>
 <br>
 
