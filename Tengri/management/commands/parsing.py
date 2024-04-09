@@ -172,7 +172,7 @@ class Command(BaseCommand):
                 )
             iters -= 1
             print(iters)
-        with open(f"{abspath}/projects_data.json", "a", encoding="utf-8") as file:
+        with open(f"{abspath}/code/projects_data.json", "a", encoding="utf-8") as file:
             json.dump(projects_data_list, file, ensure_ascii=False, indent=4)
 
 

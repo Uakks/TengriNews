@@ -5,7 +5,6 @@ from ..models import Article
 
 class ArticleParser:
     def get_tags(self):
-
         cwd = os.getcwd()
         abspath = os.path.abspath(os.path.join(cwd))
 
