@@ -14,6 +14,8 @@ COPY . /code/
 
 # Run migrations
 RUN python manage.py migrate
+RUN python manage.py parsing
+RUN python manage.py import_json
 
 # Expose the port that the app will run on
 EXPOSE 8000
