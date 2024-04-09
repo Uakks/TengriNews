@@ -13,7 +13,7 @@ RUN pip install -r requirements.txt
 COPY . /code/
 
 # Run migrations
-#RUN #python manage.py migrate
+RUN python manage.py migrate
 
 # Expose the port that the app will run on
 EXPOSE 8000
