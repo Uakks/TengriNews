@@ -48,5 +48,6 @@ Docker - to deploy web-app I wrapped it all in docker and hosted it on render.co
 Ways to improve:
 1. Use more articles from main page of TengriNews and sort them by category, as I only took articles section for parsing.
 2. Add search function for tags
+3. Add pagination for search and sorted pages
 3. Style each post page's main text, as it is only written in one style.
 4. Maybe even add functionality to add your own articles to main feed.
