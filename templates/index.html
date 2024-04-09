@@ -13,7 +13,7 @@
         {% csrf_token %}
         <label> Поиск статьей: 
             <input type="search" class="search-field" placeholder="Search articles" name="searched">
-        </label>
+        </label><br>
         <div class="tag-filter">Фильтры:
         <select class="filter-selection" name="filtered">
             <option value="" name="filter"></option>
@@ -56,8 +56,8 @@
 <nav aria-label="Page navigation example">
     <div class="pagination">
         {% if news.has_previous %}
-            <span class="page-item"><a class="page-link" href="?page=1">&laquo; First</a></span>
-            <span class="page-item"><a class="page-link" href="?page={{ news.previous_page_number }}">Previous</a></span>
+            <span class="page-item"><a class="page-link" href="?page=1">&laquo; Первая</a></span>
+            <span class="page-item"><a class="page-link" href="?page={{ news.previous_page_number }}">Прошлая</a></span>
         {% endif %}
         {% if news.number != 1 %}
             <span class="page-item"><a class="page-link" href="?page={{ news.previous_page_number }}">{{ news.previous_page_number }}</a></span>
@@ -67,8 +67,8 @@
             <span class="page-item"><a class="page-link" href="?page={{ news.next_page_number }}">{{ news.next_page_number }}</a></span>
         {% endif %}
         {% if news.has_next %}
-            <span class="page-item"><a class="page-link" href="?page={{ news.next_page_number }}">Next</a></span>
-            <span class="page-item"><a class="page-link" href="?page={{ news.paginator.num_pages }}">Last &raquo;</a></span>
+            <span class="page-item"><a class="page-link" href="?page={{ news.next_page_number }}">Следующая</a></span>
+            <span class="page-item"><a class="page-link" href="?page={{ news.paginator.num_pages }}">Последняя &raquo;</a></span>
         {% endif %}
     </div>
 </nav>

@@ -1,11 +1,13 @@
 html {
     width: 100%;
     box-sizing: border-box;
+    font-family: "Times New Roman", sans-serif;
 }
 
 body {
     margin: 20px;
-    background: rgba(232,255,233,0.96);
+    background: #def2f1;
+    color: #17252a;
 }
 
 h1 {
@@ -13,8 +15,8 @@ h1 {
     text-align: center;
     margin: 0 0 20px 0;
     font-size: 96px;
-    color: rgba(24,24,22,0.96);
-    background: rgba(124, 241, 112, 0.96);
+    color: #17252a;
+    background: #3aafa9;
     padding: 30px 0;
     border: black 3px solid;
 }
@@ -22,13 +24,21 @@ h1 {
 .article-forms {
     display: flex;
     font-size: 20px;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-bottom: 10px;
 }
 
 .search-form {
-
+    display: block;
+    align-content: space-evenly;
 }
+
+.search-field, .filter-selection {
+    height: 25px;
+    border-radius: 5px;
+}
+
+
 
 .sort-form {
     /*margin-right: 50%;*/
@@ -50,7 +60,6 @@ h1 {
     grid-template-columns: 32% 32% 32%;
     grid-column-gap: 2%;
     grid-row-gap: 2rem;
-    background: rgba(191,255,171,0.96);
 }
 
 .news a {
@@ -60,8 +69,9 @@ h1 {
 
 .post {
     border-radius: 10px;
+    border: black 2px solid;
     padding: 10px 10px 30px;
-    background: rgba(221,233,255,0.96);
+    background: #b6f3ee;
 }
 
 .title {
