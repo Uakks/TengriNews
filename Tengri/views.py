@@ -33,7 +33,7 @@ def search_articles(request):
             articles = Article.objects.all()
         return render(request, 'search_articles.html', {'filtered': filters[0], 'searched': searched, 'articles': articles})
     else:
-        return render(request, 'search_articles.html', {})
+        return render(request, 'search_articles.html')
 
 
 def sorted_articles(request):
