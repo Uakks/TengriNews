@@ -27,7 +27,9 @@ docker-compose logs -f
 
 Also check online hosted version by this link: https://tengrinews.onrender.com/
 
-Main processes of building this app:<br>
+<br><br>
+
+Main processes of building this app:<br><br>
 First steps - designing the index.html file and constructing proper space for main page and adding all needed 
 views and urls. Also creating news.html file for each article and styling everything<br>
 
