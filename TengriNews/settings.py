@@ -28,6 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS = ['https://tengrinews.onrender.com', 'https://*.127.0.0.1',
+                        'https://tengrinews.onrender.com/search_articles',
+                        'https://tengrinews.onrender.com/sorted_articles']
 # Application definition
 
 INSTALLED_APPS = [
