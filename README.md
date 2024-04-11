@@ -53,3 +53,6 @@ Ways to improve:
 3. Add pagination for search and sorted pages
 4. Style each post page's main text, as it is only written in one style.
 5. Maybe even add functionality to add your own articles to main feed.
+
+Update: 
+Changes after deadline was made due to little bug with hosting. Fixed after deadline, took only one line of code in setting.py.
